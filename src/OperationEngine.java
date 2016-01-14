@@ -1,3 +1,4 @@
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -10,10 +11,9 @@ import java.rmi.server.UnicastRemoteObject;
 public class OperationEngine  extends UnicastRemoteObject implements IOperation {
 
     //  constructor for ComputeEngine instances.
-    public OperationEngine() throws RemoteException{
-
-        //  the no-argument constructor of the Object class
+    public OperationEngine()  throws  RemoteException {
         super();
+        //  the no-argument constructor of the Object class
     }
 
     //   implementations for each remote method specified in the remote interfaces

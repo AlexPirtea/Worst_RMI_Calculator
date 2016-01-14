@@ -48,6 +48,11 @@ public class Client {
                     case '4':
                         System.out.print("Impartire: " + rez + " \\ ");
                         input = keyboard.nextDouble();
+
+                        if(input == 0.00){
+                            System.out.println("Err: Impartire la 0");
+                            break;
+                        }
                         rez = comp.Impartire(rez,input);
                         break;
 
@@ -62,11 +67,40 @@ public class Client {
                         break;
 
                     case '7':
+                        if(rez != Math.floor(rez) || Double.isInfinite(rez)){
+                            System.out.println("Err: Nu se poate face factorial daca numarul nu este intreg");
+                            break;
+                        }
                         rez = comp.Factorial((int)rez);
                         break;
 
                     case '8':
+                        if(rez < 0.00){
+                            System.out.println("Err: Valoare negativa");
+                            break;
+                        }
                         rez = comp.RadacinaPatrata(rez);
+
+                        break;
+
+                    case 'a':
+                        memorie += rez;
+                        break;
+
+                    case 'b':
+                        memorie -= rez;
+                        break;
+
+                    case 'c':
+                        memorie = rez;
+                        break;
+
+                    case 'd':
+                        rez = memorie;
+                        break;
+
+                    case 'e':
+                        memorie = 0.00;
                         break;
 
                     default:
@@ -97,6 +131,14 @@ public class Client {
                 "\n|\t6.Ridicare la putere\t|" +
                 "\n|\t7.Factorial\t\t\t\t|" +
                 "\n|\t8.Radacina patrata\t\t|" +
+                "\n|\t\t\t\t\t\t\t|"+
+                "\n|\tOpratii cu memoria\t\t|" +
+                "\n|\t\t\t\t\t\t\t|"+
+                "\n|\ta.Adunare\t\t\t\t|" +
+                "\n|\tb.Scadere\t\t\t\t|" +
+                "\n|\tc.Stocare\t\t\t\t|" +
+                "\n|\td.Citire\t\t\t\t|" +
+                "\n|\te.Stargere\t\t\t\t|" +
                 "\n------------------------------" +
                 "\n\nq.Quit" +
                 "\n");
